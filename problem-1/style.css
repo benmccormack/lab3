@@ -1,0 +1,25 @@
+#userInput{
+    margin: auto;
+    text-align: center;
+    padding: 3%;
+    background-color: aqua;
+    width: 40%;
+    border-radius: 20px;
+    border: 2px solid grey;
+}
+
+#contactSearch {
+    text-align: center;
+    margin: 3%;
+}
+
+
+
+table {
+    margin: auto;
+}
+
+table, th, td {
+    border: 1px solid black;
+    border-collapse: collapse;
+  }

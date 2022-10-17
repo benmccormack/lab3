@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Phone Directory</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <h2 style="text-align: center;">Phone Directory</h2>
+    <div id="userInput">
+        <form>
+            <input type="text" id="name" placeholder="Contact Name" required/>
+            <input type="text" id="number" placeholder="Mobile Number" required/>
+            <input type="text" id="email" placeholder="Email" required/>
+            <button>Add Contact</button>
+        </form>
+    </div>
+
+    <div id="contactSearch">
+        <p>Search Contact By Mobile No. <input type="text" placeholder="Mobile Number"></p>
+    </div>
+
+    <div id="contactTable">
+        <table id="contacts">
+            <tr>
+                <th>Name</th>
+                <th>Mobile</th>
+                <th>Email</th>
+            </tr>
+        </table>
+    </div>
+</body>
+
+</html>
