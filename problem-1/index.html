@@ -10,18 +10,20 @@
 </head>
 
 <body>
+    <div id="noResult"><p>No result found from search!</p></div>
     <h2 style="text-align: center;">Phone Directory</h2>
     <div id="userInput">
         <form>
-            <input type="text" id="name" placeholder="Contact Name" required/>
-            <input type="text" id="number" placeholder="Mobile Number" required/>
-            <input type="text" id="email" placeholder="Email" required/>
-            <button>Add Contact</button>
+            <input type="text" id="name" placeholder="Contact Name" required maxlength="20"/>
+            <input type="text" id="number" placeholder="Mobile Number" required maxlength="10"/>
+            <input type="text" id="email" placeholder="Email" required maxlength="40"/>
         </form>
+        <button onClick = addContact()>Add Contact</button>
     </div>
 
     <div id="contactSearch">
-        <p>Search Contact By Mobile No. <input type="text" placeholder="Mobile Number"></p>
+        <p>Search Contact By Mobile No. <input type="text" id="search" placeholder="Mobile Number" onkeyup="filterContacts()"></p>
+        <button onClick = sortNames()>Sort By Name</button>
     </div>
 
     <div id="contactTable">
@@ -33,6 +35,7 @@
             </tr>
         </table>
     </div>
+    <script src="app.js"></script>
 </body>
 
 </html>
