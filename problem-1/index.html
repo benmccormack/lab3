@@ -13,7 +13,7 @@
     <div id="noResult"><p>No result found from search!</p></div>
     <h2 style="text-align: center;">Phone Directory</h2>
     <div id="userInput">
-        <form>
+        <form id="contactForm">
             <input type="text" id="name" placeholder="Contact Name" required maxlength="20"/>
             <input type="text" id="number" placeholder="Mobile Number" required maxlength="10"/>
             <input type="text" id="email" placeholder="Email" required maxlength="40"/>
@@ -23,13 +23,12 @@
 
     <div id="contactSearch">
         <p>Search Contact By Mobile No. <input type="text" id="search" placeholder="Mobile Number" onkeyup="filterContacts()"></p>
-        <button onClick = sortNames()>Sort By Name</button>
     </div>
 
     <div id="contactTable">
         <table id="contacts">
             <tr>
-                <th>Name</th>
+                <th onClick="sortNames()">Name</th>
                 <th>Mobile</th>
                 <th>Email</th>
             </tr>
