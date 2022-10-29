@@ -6,7 +6,7 @@ function addContact(){
     let entryError = document.getElementById("inputError");
     let error = document.getElementById("noResult");
 
-    if(checkNumber(number) == true){
+    if(validateName(name) == true && checkNumber(number) == true){
         entryError.style.display = "none";
         error.style.display = "none";
         // finding the contact table
@@ -37,22 +37,26 @@ function addContact(){
 
 function checkNumber(number){
   if(isNaN(number)){
-    console.log("entered string is not a number")
     return false;
   } else {
+    //if it is a number then it must be 10 digits in length 
     if(number.length == 10){
-      console.log("entered string is a number")
       return true;
     }
   }
 }
 
-function validateName(){
-
+function validateName(name){
+  if(name.length <= 20){
+    //checks that the name only contains letters and spaces
+    return /^[A-Za-z\s]*$/.test(name);
+  }else{
+    return false;
+  }
 }
 
 function validateEmail(){
-
+  
 }
 
 function rowColor(){
