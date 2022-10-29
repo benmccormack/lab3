@@ -3,10 +3,11 @@ function addContact(){
     let name = document.getElementById("name").value;
     let number = document.getElementById("number").value;
     let email = document.getElementById("email").value;
+    let entryError = document.getElementById("inputError");
+    let error = document.getElementById("noResult");
 
-    var error = document.getElementById("noResult");
-
-    if(name.length >= 20 || number.length ==10 || email.length >= 40){
+    if(checkNumber(number) == true){
+        entryError.style.display = "none";
         error.style.display = "none";
         // finding the contact table
         var table = document.getElementById("contacts");
@@ -30,7 +31,28 @@ function addContact(){
         document.getElementById("contactForm").reset();
     } else {
         //show the error div with text
+        entryError.style.display = "block";
     }
+}
+
+function checkNumber(number){
+  if(isNaN(number)){
+    console.log("entered string is not a number")
+    return false;
+  } else {
+    if(number.length == 10){
+      console.log("entered string is a number")
+      return true;
+    }
+  }
+}
+
+function validateName(){
+
+}
+
+function validateEmail(){
+
 }
 
 function rowColor(){
@@ -74,8 +96,55 @@ function filterContacts(){
 }
 
 function sortNames(){
-    var table = document.getElementById("contacts");
-    var rows = table.rows;
+  let swap = false;
+  let sortBy = "ascending";
+  let counter = 0;
+  let i = 0;
+  let table = document.getElementById("contacts");
+  let rows = table.rows;
+  let swapping = true;
+  sortBy = "ascending";
 
-    
+  while (swapping) {
+    swapping = false;
+
+    for (i = 1; i < (rows.length - 1); i++) {
+      //initally swap is false because no swapping is done.
+      swap = false;
+      //getting the current and next cell
+      let currentCell = rows[i].getElementsByTagName("td")[0];
+      let nextCell = rows[i + 1].getElementsByTagName("td")[0];
+
+
+      if (sortBy == "ascending") {
+        // if current cell is greater than next cell, we set swap to true and break to enter the if(swap) statement
+        if (currentCell.innerHTML.toLowerCase() > nextCell.innerHTML.toLowerCase()) {
+          swap = true;
+          break;
+        }
+      } else if (sortBy == "descending") {
+        // if current cell is less than next cell, we set swap to true and break to enter the if(swap) statement
+        if (currentCell.innerHTML.toLowerCase() < nextCell.innerHTML.toLowerCase()) {
+          swap = true;
+          break;
+        }
+      }
+    }
+
+    if (swap) {
+      //put the next element before the current element
+      rows[i].parentNode.insertBefore(rows[i + 1], rows[i]);
+      switching = true;
+      //increment the amount of changes made
+      counter ++;
+    } else {
+      if (counter == 0 && sortBy == "ascending") {
+        //if no swapping was done and it is sorted by ascending, we will then sort names by descending if the header is clicked.
+        sortBy = "descending";
+        swapping = true;
+      }
+    }
+  }
+  // when sorted - change the row color so every second row is as shoul be.
+  rowColor();
 }

@@ -43,3 +43,18 @@ td {
     font-family: Arial, Helvetica, sans-serif;
     text-align: center;
 }
+
+#inputError{
+    background-color: red;
+    color: white;
+    width: 100%;
+    display: none;
+    text-align: center;
+}
+
+#inputError p{
+    padding: 1%;
+    font-family: Arial, Helvetica, sans-serif;
+    text-align: center;
+}
+
