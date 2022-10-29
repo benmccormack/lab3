@@ -4,10 +4,9 @@ function addContact(){
     let number = document.getElementById("number").value;
     let email = document.getElementById("email").value;
     let entryError = document.getElementById("inputError");
-    let error = document.getElementById("noResult");
+    let error = document.getElementById("error");
 
     if(validateName(name) == true && checkNumber(number) == true && validateEmail(email) == true){
-        entryError.style.display = "none";
         error.style.display = "none";
         // finding the contact table
         var table = document.getElementById("contacts");
@@ -31,7 +30,8 @@ function addContact(){
         document.getElementById("contactForm").reset();
     } else {
         //show the error div with text
-        entryError.style.display = "block";
+        error.style.display = "block";
+        error.innerHTML = "INPUT ERROR: Please ensure name is 20 chararcters or less, number is 10 digits and email address is valid!";
     }
 }
 
@@ -86,7 +86,7 @@ function filterContacts(){
     var filter = input.value.toUpperCase();
     var table = document.getElementById("contacts");
     var row = document.getElementsByTagName("tr");
-    var error = document.getElementById("noResult");
+    var error = document.getElementById("error");
 
     //looping through each row and hiding the rows that do not match
     for(i=0; i<row.length; i++){
@@ -99,6 +99,7 @@ function filterContacts(){
                 error.style.display="none";
             } else {
                 row[i].style.display="none";
+                error.innerHTML = "ERROR: No result found from search!";
                 error.style.display="block";
             }
         }

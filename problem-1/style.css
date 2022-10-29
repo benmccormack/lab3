@@ -31,20 +31,7 @@ td {
     text-align: center;
 }
 
-#noResult{
-    background-color: red;
-    color: white;
-    width: 100%;
-    display: none;
-}
-
-#noResult p{
-    padding: 1%;
-    font-family: Arial, Helvetica, sans-serif;
-    text-align: center;
-}
-
-#inputError{
+#error{
     background-color: red;
     color: white;
     width: 100%;
@@ -52,7 +39,7 @@ td {
     text-align: center;
 }
 
-#inputError p{
+#error p{
     padding: 1%;
     font-family: Arial, Helvetica, sans-serif;
     text-align: center;
