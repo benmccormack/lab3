@@ -6,7 +6,7 @@ function addContact(){
     let entryError = document.getElementById("inputError");
     let error = document.getElementById("noResult");
 
-    if(validateName(name) == true && checkNumber(number) == true){
+    if(validateName(name) == true && checkNumber(number) == true && validateEmail(email) == true){
         entryError.style.display = "none";
         error.style.display = "none";
         // finding the contact table
@@ -55,8 +55,14 @@ function validateName(name){
   }
 }
 
-function validateEmail(){
-  
+function validateEmail(email){
+  if(email.length <= 40){
+    //checks for any string + @ symbol + any string + . symbol + any string
+    var re = /\S+@\S+\.\S+/;
+    return re.test(email);
+  } else {
+    return false;
+  }
 }
 
 function rowColor(){
