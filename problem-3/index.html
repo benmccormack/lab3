@@ -10,16 +10,27 @@
 <body>
     <div id="search">
         <input id="searchBar" type="text" placeholder="Username"/>
-        <button id="searchButton" onclick="findUser()">Search</button>
+        <button id="searchButton" onclick="clearRepos() ; findUser()">Search</button>
     </div>
 
     <div id="userInfo">
+        <h2>User Profile</h2>
         <img id= "profilePic" src="https://media.istockphoto.com/vectors/thumbnail-image-vector-graphic-vector-id1147544807?k=20&m=1147544807&s=612x612&w=0&h=pBhz1dkwsCMq37Udtp9sfxbjaMl27JUapoyYpQm0anc=">
+        <hr>
         <div id="name">Name</div>
+        <hr>
         <div id="username">Username</div>
-        <div id="email">email</div>
+        <hr>
+        <div id="email">Email</div>
+        <hr>
         <div id="location">Location</div>
+        <hr>
         <div id="gists">Number of Gists</div>
+    </div>
+
+    <div id="repos">
+        <h2>Repos</h2>
+  
     </div>
 
     <script src="app.js"></script>

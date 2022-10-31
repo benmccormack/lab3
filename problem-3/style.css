@@ -1,10 +1,38 @@
+#search{
+    text-align: center;
+    padding: 3%;
+}
+#searchBar {
+    width: 50%;
+    font-size: 20px;
+}
+
+#searchButton {
+    padding: 4px 22px;
+}
+
 #userInfo {
     display: inline-block;
     width: 30%;
     border: 1px solid black;
     padding: 2%;
+    font-size: 18px;
+    font-family: Arial, Helvetica, sans-serif;
+    border-radius: 50px;
 }
 
 #userInfo img {
     width: 80%;
 }
+
+
+#repos{
+    float: right;
+    width: 60%;
+    border: 1px solid black;
+    padding: 2%;
+    font-size: 18px;
+    font-family: Arial, Helvetica, sans-serif;
+    border-radius: 50px;
+}
+
