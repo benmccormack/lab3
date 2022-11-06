@@ -11,28 +11,53 @@
     padding: 4px 22px;
 }
 
-#userInfo {
+#leftSide{
     display: inline-block;
     width: 30%;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+#userInfo {
+    width: 100%;
     border: 1px solid black;
     padding: 2%;
     font-size: 18px;
     font-family: Arial, Helvetica, sans-serif;
-    border-radius: 50px;
+    border-radius: 15px;
 }
 
 #userInfo img {
     width: 80%;
 }
 
+#rightSide{
+    float: right;
+    display:inline-block;
+    width: 60%;
+    font-family: Arial, Helvetica, sans-serif;
+}
 
 #repos{
-    float: right;
-    width: 60%;
+    width: 100%;
     border: 1px solid black;
     padding: 2%;
     font-size: 18px;
     font-family: Arial, Helvetica, sans-serif;
-    border-radius: 50px;
+    border-radius: 15px;
+    height: 400px;
 }
 
+#repos-scroll{
+    width: 100%;
+    border: 1px solid black;
+    padding: 2%;
+    font-size: 18px;
+    font-family: Arial, Helvetica, sans-serif;
+    border-radius: 15px;
+    height: 400px;
+    overflow-y: scroll;
+}
+
+body{
+    padding: 2%;
+}

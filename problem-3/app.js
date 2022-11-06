@@ -37,13 +37,13 @@ let getUserRepos = (data, username) => {
 // this function is responsible for populating the repos. 
 let populateRepos = (data) => {
     let repos = document.getElementById('repos');
-    //creating the repos title
-    let title = document.createElement('h2');
-    title.innerHTML = 'Repos'
-    repos.appendChild(title);
+
 
     //creating a repo title and description for each repo and adding a hr to seperate each repository
     for(let i = 0; i < data.length; i++){
+        if(i > 5){
+            repos.id = 'repos-scroll';
+        }
         let repo = document.createElement('div');
         repo.className = 'repo';
         repo.innerHTML = 'Repo Name:  ' + data[i].name;
